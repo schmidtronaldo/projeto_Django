@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models  import User
+from django.contrib.auth.models import User
+
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=20)
@@ -9,7 +10,7 @@ class Categoria(models.Model):
 
 
 class Flashcard(models.Model):
-    DIFICULDADE_CHOICES = (('D', 'Difícil'), ('M', 'Médio'), ('F', 'Fácil'))
+    DIFICULDADE_CHOICES = (("D", "Difícil"), ("M", "Médio"), ("F", "Fácil"))
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     pergunta = models.CharField(max_length=100)
     resposta = models.TextField()
